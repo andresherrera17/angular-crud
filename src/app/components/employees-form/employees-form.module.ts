@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EmployeesFormComponent } from './employees-form.component';
 
 
 
 @NgModule({
-  declarations: [EmployeesFormModule],
+  declarations: [EmployeesFormComponent],
   imports: [
     CommonModule
   ]
