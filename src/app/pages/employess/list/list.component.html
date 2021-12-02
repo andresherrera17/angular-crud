@@ -15,7 +15,9 @@
           <td>{{ item.email}}</td>
           <td>{{ item.startDate }}</td>
           <td class="btn-group d-done d-sm-block" role="group">
-
+            <button type="button" class="btn btn-outline-info m-1" (click)="edit(item)"> Edit </button>
+            <button type="button" class="btn btn-outline-info m-1" (click)="view(item)"> View </button>
+            <button type="button" class="btn btn-outline-danger m-1" (click)="delete(item.id)"> Delete </button>
           </td>
         </tr>
       </tbody>
