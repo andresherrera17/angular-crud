@@ -1,2 +1,24 @@
-crear tabla con columnas Name, Email, StartDate, Acciones
-*ngForm=" | pipe", pipe se utiliza para resolver observables
+<div class="container mt-5">
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Start Date</th>
+          <th scope="d-none d-sm-block">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-primary" *ngFor="let item of employees$ | async">
+          <th scope="row">{{ item.name}} {{ item.lastName }}</th>
+          <td>{{ item.email}}</td>
+          <td>{{ item.startDate }}</td>
+          <td class="btn-group d-done d-sm-block" role="group">
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
