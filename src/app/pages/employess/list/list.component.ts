@@ -8,14 +8,11 @@ import { EmployeesService } from 'src/app/services/employees.service';
 })
 export class ListComponent implements OnInit {
 
-
+  employees$ = this._serviceEmployees.employees$;
 
   constructor(private _serviceEmployees: EmployeesService) { }
 
   ngOnInit(): void {
-    this._serviceEmployees.employees$.subscribe(employee => {
-      console.log(employee);
-    });
   }
 
 }
