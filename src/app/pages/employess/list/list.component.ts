@@ -31,7 +31,13 @@ export class ListComponent implements OnInit {
     this.navigationExtras.state = item;
     this.router.navigate(['details'], this.navigationExtras)
   }
-  delete(id: any) {
 
+  async delete(id: any) {
+    try {
+      await this._serviceEmployees.onDeleteEmployees(id);
+      alert('Delete');
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
