@@ -21,9 +21,11 @@ export class EmployeesFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (this.employee) {
-    //   this.employeeForm.patchValue(this.employee);
-    // }
+    if (Object.entries(this.employee).length === 0) {
+      this.router.navigate(['/new']);
+    } else {
+      this.employeeForm.patchValue(this.employee);
+    }
   }
 
   isValidField(field: string): string {
