@@ -11,7 +11,7 @@
       </thead>
       <tbody>
         <tr class="table-primary" *ngFor="let item of employees$ | async">
-          <th scope="row">{{ item.name}} {{ item.lastName }}</th>
+          <th scope="row"> {{ item.name}} {{ item.lastName }}</th>
           <td>{{ item.email}}</td>
           <td>{{ item.startDate }}</td>
           <td class="btn-group d-done d-sm-block" role="group">

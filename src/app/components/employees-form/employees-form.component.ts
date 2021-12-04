@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-employees-form',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesFormComponent implements OnInit {
 
-  constructor() { }
+  employeeForm: FormGroup = new FormGroup({});
+
+  private isEmail = /\S+@\S+\.\S+/;
+  constructor(private formBuilder: FormBuilder) {
+    this.initForm();
+  }
 
   ngOnInit(): void {
   }
 
+  private initForm() {
+    this.employeeForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.pattern(this.isEmail)]],
+      startDate: ['', [Validators.required]],
+    })
+  }
+
+  onSave() {
+
+  }
 }

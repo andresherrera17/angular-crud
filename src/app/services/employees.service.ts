@@ -18,7 +18,7 @@ export class EmployeesService {
 
   private getEmployees(): void {
     this.employees$ = this.employeesCollection.snapshotChanges().pipe(
-      map(actions => actions.map(elem => elem.payload.doc.data() as IEmployee))
+      map(actions => actions.map(elem => { return { id: elem.payload.doc.id, ...elem.payload.doc.data() } as IEmployee }))
     )
   }
 }
